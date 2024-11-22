@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 ---
 
@@ -11,10 +13,7 @@ import '../styles/global.css';
 		<title>Astro</title>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/work/">Work</a>
-        <a href="/blog/">Blog</a>
+        <Header />
         
 		<h1>Work and Examples</h1>
 
@@ -24,6 +23,8 @@ import '../styles/global.css';
             <h3>Film Photography</h3>
             <img src="https://cdn.myportfolio.com/185f8eaf-b422-4b1d-9aaf-02b71649f7f0/8a906464-8d10-457c-922f-06f1cf00ae64_rw_1920.JPG?h=fdd007fe76f94e0b1ff79dc4fde2a576" style="width:50%; height:50%"/>
         </div>
+
+       <Footer /> 
     </body>
         
 </html>
