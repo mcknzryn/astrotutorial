@@ -1,7 +1,5 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
 
@@ -24,14 +22,8 @@ const textCase = "uppercase";
 const bootyCheeks = "big";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
+<BaseLayout pageTitle={pageTitle}>
+        <style is:global define:vars={{skillColor, fontWeight, textCase}}>
             h1 {
                 color: purple;
                 font-size: 4rem;
@@ -43,11 +35,7 @@ const bootyCheeks = "big";
                 text-transform: var(--textCase);
             }
         </style>
-	</head>
-	<body>
-        <Header />
 
-		<h1>{pageTitle}</h1>
         <h2>This is my new Astro site!</h2>
 
         <img src="https://cdn.myportfolio.com/185f8eaf-b422-4b1d-9aaf-02b71649f7f0/120e63a7-3980-4624-bad6-23db0cf1a4f1_rw_1920.JPG?h=71d2f6f0e9daaa97351cb843d6369621" style="width:30%"/>
@@ -73,7 +61,4 @@ const bootyCheeks = "big";
         {happy && <p>I am happy to be learning Astro!</p>}
         {finished && <p>I finished this tutorial!</p>}
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days</p>}
-    
-        <Footer />
-    </body>
-</html>
+</BaseLayout>
